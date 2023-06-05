@@ -15,10 +15,25 @@ const rl = readline.createInterface({ input, output });
  * Guide code borrowed from: https://nodejs.org/api/readline.html#readline
  */
 // TODO: Once your program is working, comment this "guide code" out or delete it.
-let userInput = await rl.question('What do you think of Node.js? ');
-console.log(`Thank you for your valuable feedback: ${userInput}`);
-userInput = await rl.question(`Why do you think Node.js ${userInput}?`)
+//let userInput = await rl.question('What do you think of Node.js? ');
+//console.log(`Thank you for your valuable feedback: ${userInput}`);
+//userInput = await rl.question(`Why do you think Node.js ${userInput}?`)
 
 
 // TODO: Using the above code as a reference and a guide, implement the deaf grandma problem!
-input = await rl.question('HEY, KID!');
+
+
+let lowerCase = 'abcdefghijklmnopqrstuvwxyz'
+
+let input1 = await rl.question('HEY, KID! ');
+if (input1 == '') {
+    input1 = await rl.question('WHAT?! ')
+} if (lowerCase.includes(input1)) {
+    input1 = await rl.question('SPEAK UP, KID! ')
+} if (input1 != '' && !lowerCase.includes(input1)) {
+    input1 = await rl.question('NO, NOT SINCE 1946! ')
+} if (input1 == 'GOODBYE!') {
+    input1 = await rl.question('LEAVING SO SOON? ')
+} if (input1 == 'GOODBYE!') {
+    input1 = await rl.question('LATER, SKATER! ')
+} rl.close()
