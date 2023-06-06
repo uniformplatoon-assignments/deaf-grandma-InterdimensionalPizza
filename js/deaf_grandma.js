@@ -26,14 +26,20 @@ const rl = readline.createInterface({ input, output });
 let lowerCase = 'abcdefghijklmnopqrstuvwxyz'
 
 let input1 = await rl.question('HEY, KID! ');
+
+while (true) {
 if (input1 == '') {
     input1 = await rl.question('WHAT?! ')
-} if (lowerCase.includes(input1)) {
+} else if (input1 !== input1.toUpperCase()) {
     input1 = await rl.question('SPEAK UP, KID! ')
-} if (input1 != '' && !lowerCase.includes(input1)) {
-    input1 = await rl.question('NO, NOT SINCE 1946! ')
-} if (input1 == 'GOODBYE!') {
+} else if (input1 == 'GOODBYE!') {
     input1 = await rl.question('LEAVING SO SOON? ')
-} if (input1 == 'GOODBYE!') {
-    input1 = await rl.question('LATER, SKATER! ')
-} rl.close()
+    if (input1 == 'GOODBYE!') {
+        input1 = await rl.question('LATER, SKATER! ')
+        break
+    }
+} else if (input1 != '' && !lowerCase.includes(input1)) {
+    input1 = await rl.question('NO, NOT SINCE 1946! ')
+}
+}
+rl.close()
